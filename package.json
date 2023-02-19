@@ -1,10 +1,10 @@
 {
-    "name": "playground-lite",
+    "name": "world-log",
     "version": "0.0.1",
     "scripts": {
         "ng": "ng",
         "build": "ng build --configuration development",
-        "deploy": "ng build --configuration development --output-path docs --base-href /playground-lite/ && copy docs\\index.html docs\\404.html",
+        "deploy": "ng build --configuration development --output-path docs --base-href /world-log/ && copy docs\\index.html docs\\404.html",
         "start": "ng serve --configuration development"
     },
     "private": true,

@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "playground-lite": {
+    "world-log": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -48,7 +48,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/playground-lite",
+            "outputPath": "dist/world-log",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -101,15 +101,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "playground-lite:build",
+            "browserTarget": "world-log:build",
             "port": 3000
           },
           "configurations": {
             "production": {
-              "browserTarget": "playground-lite:build:production"
+              "browserTarget": "world-log:build:production"
             },
             "development": {
-              "browserTarget": "playground-lite:build:development"
+              "browserTarget": "world-log:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -117,7 +117,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "playground-lite:build"
+            "browserTarget": "world-log:build"
           }
         }
       }
