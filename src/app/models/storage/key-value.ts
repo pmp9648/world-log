@@ -6,3 +6,4 @@ export class KeyValue<T> {
       this.key = key;
       this.value = value;
     }
+}
