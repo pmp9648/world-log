@@ -31,3 +31,5 @@ export class LocalStorage<T> implements IStorage<T> {
         this.hasState = false;
     }
 }
+
+
