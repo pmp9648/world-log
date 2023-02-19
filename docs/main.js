@@ -846,15 +846,27 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Datalist": () => (/* reexport safe */ _storage__WEBPACK_IMPORTED_MODULE_2__.Datalist),
 /* harmony export */   "Entity": () => (/* reexport safe */ _api__WEBPACK_IMPORTED_MODULE_0__.Entity),
+/* harmony export */   "KeyValue": () => (/* reexport safe */ _storage__WEBPACK_IMPORTED_MODULE_2__.KeyValue),
 /* harmony export */   "LocalStorage": () => (/* reexport safe */ _storage__WEBPACK_IMPORTED_MODULE_2__.LocalStorage),
 /* harmony export */   "QuerySource": () => (/* reexport safe */ _query__WEBPACK_IMPORTED_MODULE_1__.QuerySource),
-/* harmony export */   "SessionStorage": () => (/* reexport safe */ _storage__WEBPACK_IMPORTED_MODULE_2__.SessionStorage)
+/* harmony export */   "SessionStorage": () => (/* reexport safe */ _storage__WEBPACK_IMPORTED_MODULE_2__.SessionStorage),
+/* harmony export */   "StoreManager": () => (/* reexport safe */ _storage__WEBPACK_IMPORTED_MODULE_2__.StoreManager),
+/* harmony export */   "camelize": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.camelize),
+/* harmony export */   "capitalize": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.capitalize),
+/* harmony export */   "classify": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.classify),
+/* harmony export */   "dasherize": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.dasherize),
+/* harmony export */   "decamelize": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.decamelize),
+/* harmony export */   "titlecase": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.titlecase),
+/* harmony export */   "underscore": () => (/* reexport safe */ _utils__WEBPACK_IMPORTED_MODULE_4__.underscore)
 /* harmony export */ });
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ 1261);
 /* harmony import */ var _query__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./query */ 9097);
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage */ 5887);
 /* harmony import */ var _validation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./validation */ 7319);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ 612);
+
 
 
 
@@ -1045,6 +1057,32 @@ class QuerySource extends _core_query__WEBPACK_IMPORTED_MODULE_0__.CoreQuery {
 
 /***/ }),
 
+/***/ 8573:
+/*!********************************************!*\
+  !*** ./src/app/models/storage/datalist.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Datalist": () => (/* binding */ Datalist)
+/* harmony export */ });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ 612);
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ 2535);
+
+
+const Datalist = (data) => Object.entries(data)
+    .map(([key, value]) => {
+    return {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+        label: (0,_utils__WEBPACK_IMPORTED_MODULE_0__.titlecase)(key),
+        value: value
+    };
+});
+
+
+/***/ }),
+
 /***/ 5887:
 /*!*****************************************!*\
   !*** ./src/app/models/storage/index.ts ***!
@@ -1053,12 +1091,21 @@ class QuerySource extends _core_query__WEBPACK_IMPORTED_MODULE_0__.CoreQuery {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LocalStorage": () => (/* reexport safe */ _local_storage__WEBPACK_IMPORTED_MODULE_1__.LocalStorage),
-/* harmony export */   "SessionStorage": () => (/* reexport safe */ _session_storage__WEBPACK_IMPORTED_MODULE_2__.SessionStorage)
+/* harmony export */   "Datalist": () => (/* reexport safe */ _datalist__WEBPACK_IMPORTED_MODULE_0__.Datalist),
+/* harmony export */   "KeyValue": () => (/* reexport safe */ _key_value__WEBPACK_IMPORTED_MODULE_1__.KeyValue),
+/* harmony export */   "LocalStorage": () => (/* reexport safe */ _local_storage__WEBPACK_IMPORTED_MODULE_3__.LocalStorage),
+/* harmony export */   "SessionStorage": () => (/* reexport safe */ _session_storage__WEBPACK_IMPORTED_MODULE_4__.SessionStorage),
+/* harmony export */   "StoreManager": () => (/* reexport safe */ _store_manager__WEBPACK_IMPORTED_MODULE_5__.StoreManager)
 /* harmony export */ });
-/* harmony import */ var _istorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./istorage */ 9051);
-/* harmony import */ var _local_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./local-storage */ 2791);
-/* harmony import */ var _session_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session-storage */ 7452);
+/* harmony import */ var _datalist__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./datalist */ 8573);
+/* harmony import */ var _key_value__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./key-value */ 4376);
+/* harmony import */ var _istorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./istorage */ 9051);
+/* harmony import */ var _local_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./local-storage */ 2791);
+/* harmony import */ var _session_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session-storage */ 7452);
+/* harmony import */ var _store_manager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store-manager */ 8622);
+
+
+
 
 
 
@@ -1074,6 +1121,26 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 
+
+
+/***/ }),
+
+/***/ 4376:
+/*!*********************************************!*\
+  !*** ./src/app/models/storage/key-value.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "KeyValue": () => (/* binding */ KeyValue)
+/* harmony export */ });
+class KeyValue {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+}
 
 
 /***/ }),
@@ -1149,6 +1216,259 @@ class SessionStorage {
         this.key = key;
         this.get();
     }
+}
+
+
+/***/ }),
+
+/***/ 8622:
+/*!*************************************************!*\
+  !*** ./src/app/models/storage/store-manager.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StoreManager": () => (/* binding */ StoreManager)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 6317);
+
+class StoreManager {
+    constructor(prefix, restore) {
+        this.data = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject([]);
+        this.data$ = this.data.asObservable();
+        this.urlEncode = (value) => {
+            const regex = /[^a-zA-Z0-9-.]/gi;
+            let newValue = value.replace(/\s/g, '-').toLowerCase();
+            newValue = newValue.replace(regex, '');
+            return newValue;
+        };
+        this.processKey = (value) => value = value.startsWith(this.prefix)
+            ? this.urlEncode(value)
+            : this.urlEncode(`${this.prefix}-${value}`);
+        this.revive = (value) => this.restore(JSON.parse(value));
+        this.entries = () => Object.entries(localStorage)
+            .filter(([key]) => key.startsWith(this.prefix));
+        this.encode = () => encodeURIComponent(JSON.stringify(this.entries()));
+        this.verify = (data) => data.every((d) => this.revive(d[1]));
+        this.store = (data) => data.forEach((d) => localStorage.setItem(d[0], d[1]));
+        this.exists = (key) => Object.keys(localStorage)
+            .some(x => x === this.processKey(key));
+        this.getAll = () => this.entries()
+            .map(([key, value]) => this.revive(value));
+        this.get = (key) => {
+            const item = localStorage.getItem(this.processKey(key));
+            return item
+                ? this.revive(item)
+                : null;
+        };
+        this.save = (key, data) => {
+            localStorage.setItem(this.processKey(key), JSON.stringify(data));
+            this.data.next(this.getAll());
+        };
+        this.clear = () => {
+            this.entries()
+                .forEach(save => this.delete(save[0]));
+            this.data.next(this.getAll());
+        };
+        this.delete = (key) => {
+            localStorage.removeItem(this.processKey(key));
+            this.data.next(this.getAll());
+        };
+        this.download = () => {
+            const link = document.createElement('a');
+            link.href = `data:text/plain;charset=utf-8,${this.encode()}`;
+            link.download = `data.${this.prefix}`;
+            link.target = '_blank';
+            link.click();
+        };
+        this.upload = (json) => {
+            const data = JSON.parse(json);
+            try {
+                if (this.verify(data)) {
+                    this.store(data);
+                    this.data.next(this.getAll());
+                }
+            }
+            catch (ex) {
+                throw ex;
+            }
+        };
+        this.prefix = prefix;
+        this.restore = restore;
+    }
+}
+
+
+/***/ }),
+
+/***/ 612:
+/*!***************************************!*\
+  !*** ./src/app/models/utils/index.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "camelize": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.camelize),
+/* harmony export */   "capitalize": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.capitalize),
+/* harmony export */   "classify": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.classify),
+/* harmony export */   "dasherize": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.dasherize),
+/* harmony export */   "decamelize": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.decamelize),
+/* harmony export */   "titlecase": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.titlecase),
+/* harmony export */   "underscore": () => (/* reexport safe */ _strings__WEBPACK_IMPORTED_MODULE_0__.underscore)
+/* harmony export */ });
+/* harmony import */ var _strings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./strings */ 2224);
+
+
+
+/***/ }),
+
+/***/ 2224:
+/*!*****************************************!*\
+  !*** ./src/app/models/utils/strings.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "camelize": () => (/* binding */ camelize),
+/* harmony export */   "capitalize": () => (/* binding */ capitalize),
+/* harmony export */   "classify": () => (/* binding */ classify),
+/* harmony export */   "dasherize": () => (/* binding */ dasherize),
+/* harmony export */   "decamelize": () => (/* binding */ decamelize),
+/* harmony export */   "titlecase": () => (/* binding */ titlecase),
+/* harmony export */   "underscore": () => (/* binding */ underscore)
+/* harmony export */ });
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+const STRING_DASHERIZE_REGEXP = /[ _]/g;
+const STRING_DECAMELIZE_REGEXP = /([a-z\d])([A-Z])/g;
+const STRING_CAMELIZE_REGEXP = /(-|_|\.|\s)+(.)?/g;
+const STRING_UNDERSCORE_REGEXP_1 = /([a-z\d])([A-Z]+)/g;
+const STRING_UNDERSCORE_REGEXP_2 = /-|\s+/g;
+/**
+ * Converts a camelized string into all lower case separated by underscores.
+ *
+ ```javascript
+ decamelize('innerHTML');         // 'inner_html'
+ decamelize('action_name');       // 'action_name'
+ decamelize('css-class-name');    // 'css-class-name'
+ decamelize('my favorite items'); // 'my favorite items'
+ ```
+ @method decamelize
+ @param {String} str The string to decamelize.
+ @return {String} the decamelized string.
+ */
+function decamelize(str) {
+    return str.replace(STRING_DECAMELIZE_REGEXP, '$1_$2').toLowerCase();
+}
+/**
+ Replaces underscores, spaces, or camelCase with dashes.
+ ```javascript
+ dasherize('innerHTML');         // 'inner-html'
+ dasherize('action_name');       // 'action-name'
+ dasherize('css-class-name');    // 'css-class-name'
+ dasherize('my favorite items'); // 'my-favorite-items'
+ ```
+ @method dasherize
+ @param {String} str The string to dasherize.
+ @return {String} the dasherized string.
+ */
+function dasherize(str) {
+    return decamelize(str).replace(STRING_DASHERIZE_REGEXP, '-');
+}
+/**
+ Returns the lowerCamelCase form of a string.
+ ```javascript
+ camelize('innerHTML');          // 'innerHTML'
+ camelize('action_name');        // 'actionName'
+ camelize('css-class-name');     // 'cssClassName'
+ camelize('my favorite items');  // 'myFavoriteItems'
+ camelize('My Favorite Items');  // 'myFavoriteItems'
+ ```
+ @method camelize
+ @param {String} str The string to camelize.
+ @return {String} the camelized string.
+ */
+function camelize(str) {
+    return str
+        .replace(STRING_CAMELIZE_REGEXP, (_match, _separator, chr) => {
+        return chr ? chr.toUpperCase() : '';
+    })
+        .replace(/^([A-Z])/, (match) => match.toLowerCase());
+}
+/**
+ Returns the UpperCamelCase form of a string.
+ ```javascript
+ 'innerHTML'.classify();          // 'InnerHTML'
+ 'action_name'.classify();        // 'ActionName'
+ 'css-class-name'.classify();     // 'CssClassName'
+ 'my favorite items'.classify();  // 'MyFavoriteItems'
+ ```
+ @method classify
+ @param {String} str the string to classify
+ @return {String} the classified string
+ */
+function classify(str) {
+    return str
+        .split('.')
+        .map((part) => capitalize(camelize(part)))
+        .join('.');
+}
+/**
+ More general than decamelize. Returns the lower\_case\_and\_underscored
+ form of a string.
+ ```javascript
+ 'innerHTML'.underscore();          // 'inner_html'
+ 'action_name'.underscore();        // 'action_name'
+ 'css-class-name'.underscore();     // 'css_class_name'
+ 'my favorite items'.underscore();  // 'my_favorite_items'
+ ```
+ @method underscore
+ @param {String} str The string to underscore.
+ @return {String} the underscored string.
+ */
+function underscore(str) {
+    return str
+        .replace(STRING_UNDERSCORE_REGEXP_1, '$1_$2')
+        .replace(STRING_UNDERSCORE_REGEXP_2, '_')
+        .toLowerCase();
+}
+/**
+ Returns the Capitalized form of a string
+ ```javascript
+ 'innerHTML'.capitalize()         // 'InnerHTML'
+ 'action_name'.capitalize()       // 'Action_name'
+ 'css-class-name'.capitalize()    // 'Css-class-name'
+ 'my favorite items'.capitalize() // 'My favorite items'
+ ```
+ @method capitalize
+ @param {String} str The string to capitalize.
+ @return {String} The capitalized string.
+ */
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.substr(1);
+}
+/**
+ Returns the Titlecase form of a string
+ ```javascript
+ 'innerHTML'.titlecase()         // 'Inner HTML'
+ 'action_name'.titlecase()       // 'Action Name'
+ 'css-class-name'.titlecase()    // 'Css Class Name'
+ 'my favorite items'.titlecase() // 'My Favorite Items'
+ ```
+ */
+function titlecase(str) {
+    return dasherize(str)
+        .split('-')
+        .map((part) => capitalize(part))
+        .join(' ');
 }
 
 
