@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkplayground_lite"] = self["webpackChunkplayground_lite"] || []).push([["polyfills"],{
+(self["webpackChunkworld_log"] = self["webpackChunkworld_log"] || []).push([["polyfills"],{
 
 /***/ 7435:
 /*!**************************!*\

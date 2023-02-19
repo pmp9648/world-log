@@ -150,7 +150,7 @@
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkplayground_lite"] = self["webpackChunkplayground_lite"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkworld_log"] = self["webpackChunkworld_log"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
