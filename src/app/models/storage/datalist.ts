@@ -9,3 +9,4 @@ export const Datalist = <T>(data: T) =>
         label: titlecase(key),
         value: value
       }
+    });
